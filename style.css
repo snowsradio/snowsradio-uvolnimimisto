@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'sr_bold'; /*a name to be used later*/
+    src: url('images/sr_bold.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'sr_light'; /*a name to be used later*/
+    src: url('images/sr_light.ttf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'sr_icon'; /*a name to be used later*/
+    src: url('images/sr_icon.ttf'); /*URL to font*/
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+  background: #213529;
+}
+.aligncenter {
+    text-align: center;
+}
+.fit-image{
+    width: 100%;
+    object-fit: cover;
+}
+.channel-boxes {
+    height: 200px;
+    width: 600px;
+    margin: auto;
+    display: table;
+    background: linear-gradient(to bottom, #ffffff, #d5d5d5)
+}
+.banner-box {
+    height: 175px;
+    width: 1000px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    display: table;
+}
+.container {
+    display: flex;
+    justify-content: center;
+  }
+span { 
+    line-height: 1;
+    padding-top: 5px;
+    font-family:sr_black;
+    font-size: 170%;
+    color:rgb(255, 255, 255)
+}
+span b { 
+    font-family:sr_icon;
+    font-size: 300%;
+    padding-top: 50px;
+    margin: auto;
+    color:rgb(255, 255, 255);
+}
+.artist-text {
+line-height: 1;
+text-transform: uppercase;
+font-family: sr_bold;
+font-size: 180%;
+color: rgb(0, 0, 0);
+text-align: center;
+}
+.title-text {
+line-height: 1;
+text-transform: uppercase;
+font-family: sr_light;
+font-size: 175%;
+color: rgb(0, 0, 0);
+text-align: center;
+font-style: normal;
+}
+.listeners-text {
+line-height: 1;
+font-family: sr_bold;
+font-size: 100%;
+color: rgb(0, 0, 0);
+text-align: center;
+}
+.listeners-text2 {
+line-height: 1;
+font-family: sr_icon;
+font-size: 130%;
+color: rgb(0, 0, 0);
+text-align: center;
+}
+.text-test {
+font-family: sr_bold;
+font-size: 230%;
+text-align: center;
+color: #ffffff;

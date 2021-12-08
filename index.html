@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Snowsradio | Web-Radio</title>
+<link rel="stylesheet" href="style.css">    
+<link rel="shortcut icon" href="images/icon.png"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.2/plyr.css"
+          integrity="sha512-jrLDXl9jUPe5DT19ukacvpX39XiErIBZxiaVMDFRe+OAKoBVYO126Dt7cvhMJ3Fja963lboD9DH+ev/2vbEnMw=="
+          crossorigin="anonymous"/>
+</head>
+<style>
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: Arial, sans-serif;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+</style>
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+    ❅
+  </div>
+  <div class="snowflake">
+    ❆
+  </div>
+  <div class="snowflake">
+    ❅
+  </div>
+  <div class="snowflake">
+    ❆
+  </div>
+  <div class="snowflake">
+    ❅
+  </div>
+  <div class="snowflake">
+    ❆
+  </div>
+</div>
+<body style="background-color: #7371fc;background-image: url('images/bg.svg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+<br>
+<br>
+        <img id="ost_image" class="mx-auto d-block"
+        style="max-height: 170px;" alt="album cover"
+        src="images/logotop.png"/>
+</div>
+<div style="font-family: sr_light;font-size: 125%;text-align: center;color: #ffffff;padding-top: 10px;">24/7 Bass Music only!</div>
+<br>
+<br>
+<br>
+<div class="text-test"">LISTEN NOW!</div>
+<div class="container mx-auto">
+        <div class="channel-boxes mx-auto shadow">
+                <div id="player_title"></div>
+                <div>
+                </div>
+                <div>
+                    <audio autoplay; id="player" controls; style="--plyr-audio-control-color: #000; --plyr-audio-controls-background: #fff0; --plyr-color-main: #000; --plyr-control-icon-size: 25px;">
+                        <source src="http://stream.laut.fm/snowsradio"
+                                type="audio/mp3"/>
+                    </audio>
+                </div>
+<script type="text/javascript" src="//api.laut.fm/js_tools/lautfm_js_tools.0.10.0.js.min.js" ></script>
+<div id="api_lfm_current_song1_1" class="artist-text">Loading...</div>
+<script type="text/html" id="current_song_template1_1" charset="utf-8">
+<%= "" + this.artist.name + "" %>
+</script> 
+<script type="text/javascript" charset="utf-8"> laut.fm.station('snowsradio') 
+.current_song({container:'api_lfm_current_song1_1', template:'current_song_template1_1'}, true); </script>
+</script>
+<div id="api_lfm_current_song1_2" class="title-text">Loading...</div>
+<script type="text/html" id="current_song_template1_2" charset="utf-8">
+<%= "" + this.title + "" %>
+</script> 
+<script type="text/javascript" charset="utf-8"> laut.fm.station('snowsradio') 
+.current_song({container:'api_lfm_current_song1_2', template:'current_song_template1_2'}, true); </script>
+</script>
+<br>
+<div id="api_lfm_listener" class="listeners-text2">k <span id="listener" class="listeners-text">Loading...</span></div>
+<script type="text/javascript" charset="utf-8">
+var hoerer = document.getElementById('listener');
+var show_listeners = function(listeners){ listener.innerHTML = listeners}
+laut.fm.station('snowsradio').listeners(show_listeners, true);
+</script>
+<br>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
+        integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"
+        integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.2/plyr.polyfilled.min.js"
+        integrity="sha512-7kq7qBtasB6e1rth7fGAVQI6HvobtSHWKqIjsEr+21l2spvu8ZRXvRukXPTEPrExSDXpUHI5FH6xlgGZNNCgeQ=="
+        crossorigin="anonymous"></script>
+<script src="./app.js"></script>
+</body>
+</html>
