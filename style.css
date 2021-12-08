@@ -56,7 +56,6 @@ span b {
 }
 .artist-text {
 line-height: 1;
-text-transform: uppercase;
 font-family: sr_bold;
 font-size: 180%;
 color: rgb(0, 0, 0);
@@ -64,7 +63,6 @@ text-align: center;
 }
 .title-text {
 line-height: 1;
-text-transform: uppercase;
 font-family: sr_light;
 font-size: 175%;
 color: rgb(0, 0, 0);
