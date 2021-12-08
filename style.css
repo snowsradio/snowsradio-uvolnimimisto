@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'sr_bold'; /*a name to be used later*/
-    src: url('images/sr_bold.ttf'); /*URL to font*/
+    font-family: 'sr_bold';
+    src: url('images/sr_bold.ttf');
 }
 
 @font-face {
-    font-family: 'sr_light'; /*a name to be used later*/
-    src: url('images/sr_light.ttf'); /*URL to font*/
+    font-family: 'sr_light';
+    src: url('images/sr_light.ttf');
 }
 @font-face {
-    font-family: 'sr_icon'; /*a name to be used later*/
-    src: url('images/sr_icon.ttf'); /*URL to font*/
+    font-family: 'sr_icon';
+    src: url('images/sr_icon.ttf');
 }
 
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
