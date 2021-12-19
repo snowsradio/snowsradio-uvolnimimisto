@@ -88,3 +88,21 @@ font-family: sr_bold;
 font-size: 230%;
 text-align: center;
 color: #ffffff;
+}
+.countdown-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--wine-red);
+    color: var(--snow);
+    padding: 1em 2em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    width: 350px;
+}
+h1{
+    font-size: 40px;
+}
+.countdown-display {
+    font-size: 100px;
+    margin: 0;
+}
